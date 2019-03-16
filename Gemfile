@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'devise'
 
+gem 'apipie-rails'
+
 gem 'haml'
 
 gem 'hashids'  
