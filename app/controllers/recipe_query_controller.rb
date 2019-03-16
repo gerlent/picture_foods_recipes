@@ -6,7 +6,7 @@ class RecipeQueryController < ActionController::Base
       ingredient_names = params['ingredients'].split(',')
 
       ingredient_matches = ingredient_names.map do |ingredient_name|
-        Ingredient.find_by('lower(name) = ?', ingredient_name.downcase)
+        Ingredient.find_by('lower(name) = ?', ingredient_name.downcase.strip)
       end.compact.uniq
 
       ingredient_ids = ingredient_matches.pluck(:id)
