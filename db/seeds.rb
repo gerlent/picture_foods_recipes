@@ -89,4 +89,5 @@ RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: celery, a
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: banana, amount: 1)
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: ice_cube, amount: 4)
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: apple_juice, amount_in_grams: 100)
+RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: apple, amount: 1)
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: lemon_juice, amount_in_grams: 10)

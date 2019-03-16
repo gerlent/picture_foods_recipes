@@ -26,11 +26,20 @@ class RecipeQueryController < ActionController::Base
         ingredient_count = recipe.ingredients.count
         matched_ingredients_count = recipe.ingredients.where(id: ingredient_ids).count
         score = ((matched_ingredients_count.to_f/ ingredient_count.to_f) * 100).to_i
+
+        ingredients_with_amount = recipe.recipe_ingredients.map do |ri|
+          {
+            ingredient: ri.ingredient.name,
+            amount: ri.amount,
+            amount_in_grams: ri.amount_in_grams
+          }
+        end
+
         recipes_with_scores << 
         {
           score: score,
           recipe: recipe.as_json,
-          ingredients: recipe.recipe_ingredients.map{|ri| ri.as_json}
+          ingredients: ingredients_with_amount
         }
       end
 
