@@ -32,7 +32,12 @@ lemon_juice = JuiceIngredient.create(name: 'Lemon Juice', description: 'plain ol
 #orange banana smoothie
 
 orange_banana_smoothie_recipe = SmoothieRecipe.create(name: 'Orange Banana Smoothie', time_to_prepare_in_minutes: 5, portions: 1)
-orange_banana_smoothie_recipe.description = "In a blender, combine milk, oranges, banana, sugar, salt and yogurt. Blend for about 1 minute. Insert ice cubes, and blend until smooth. Pour into glasses and serve."
+
+orange_banana_smoothie_recipe.description = 
+"In a blender, combine milk, oranges, banana, sugar, salt and yogurt. Blend for about 1 minute. 
+Insert ice cubes, and blend until smooth. Pour into glasses and serve."
+
+orange_banana_smoothie_recipe.save
 
 RecipeIngredient.create(recipe: orange_banana_smoothie_recipe, ingredient: banana, amount: 1)
 RecipeIngredient.create(recipe: orange_banana_smoothie_recipe, ingredient: milk, amount_in_grams: 100)
@@ -59,6 +64,8 @@ Add the ice, banana, and maple syrup.
 Step 4
 Blend until smooth and frothy."
 
+banan_cashew_smoothie_recipe.save
+
 RecipeIngredient.create(recipe: banan_cashew_smoothie_recipe, ingredient: cashew, amount_in_grams: 100)
 RecipeIngredient.create(recipe: banan_cashew_smoothie_recipe, ingredient: banana, amount: 1)
 RecipeIngredient.create(recipe: banan_cashew_smoothie_recipe, ingredient: maple_syrup, amount_in_grams: 30)
@@ -74,6 +81,8 @@ This smoothie is best made in a high powered blender, but if you have a standard
 Remove the kale stems and tear the leaves into bite-size pieces. This will help prevent them from getting stuck around the blade. 
 Chop the celery and banana into ½-inch pieces and really let ‘er rip for a minute or 2. 
 Scrape down the sides of the blender as necessary and blend again for a straw-friendly sipper."
+
+kale_apple_smothie_recipe.save
 
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: kale, amount_in_grams: 100)
 RecipeIngredient.create(recipe: kale_apple_smothie_recipe, ingredient: celery, amount_in_grams: 30)
