@@ -9,6 +9,8 @@ gem 'haml'
 
 gem 'hashids'  
 
+gem 'cancancan'
+
 gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
