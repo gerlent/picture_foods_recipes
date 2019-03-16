@@ -25,7 +25,7 @@ class RecipeQueryController < ActionController::Base
       matched_recipes.each do |recipe|
         ingredient_count = recipe.ingredients.count
         matched_ingredients_count = recipe.ingredients.where(id: ingredient_ids).count
-        score = ((ingredient_count.to_f/ matched_ingredients_count.to_f) * 100).to_i
+        score = ((matched_ingredients_count.to_f/ ingredient_count.to_f) * 100).to_i
         recipes_with_scores << 
         {
           score: score,
