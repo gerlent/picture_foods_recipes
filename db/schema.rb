@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_16_113528) do
+ActiveRecord::Schema.define(version: 2019_03_16_132300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2019_03_16_113528) do
     t.string "name"
     t.string "description"
     t.boolean "is_gram_based"
-    t.integer "calories_per_gram"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type", null: false
-    t.index ["name"], name: "index_ingredients_on_name"
+    t.integer "calories_per_hundred_gram"
+    t.index ["name"], name: "index_ingredients_on_name", unique: true
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
@@ -39,11 +39,13 @@ ActiveRecord::Schema.define(version: 2019_03_16_113528) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.string "description"
-    t.integer "time_to_prepare"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_recipes_on_name"
+    t.text "description"
+    t.string "type", null: false
+    t.integer "portions"
+    t.integer "time_to_prepare_in_minutes"
+    t.index ["name"], name: "index_recipes_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
